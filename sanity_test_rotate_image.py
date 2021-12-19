@@ -42,7 +42,7 @@ class SanityTest:
         result, data = self.utils.check_4_string(str(data), '\'flip\': True')
 
 
-        # save logs to csv file
+        # save logs to csv file is required
         self.jira.save_results_csv(result, tc, data)
 
     def arloshc_t495_turn_off_rotate_image(self):
