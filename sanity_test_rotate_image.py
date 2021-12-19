@@ -57,6 +57,7 @@ class SanityTest:
 
         json_flip_off = {"action": "set", "properties": {"flip": False}, "resource": "cameras/" + self.cam1_cfg['sn']}
         result, data = self.utils.bs_api.shell.send_vz_cmd(json_flip_off)
+        print(result, data)
         result, data = self.utils.check_4_string(str(data), '\'flip\': False')
 
         # save logs to csv file
