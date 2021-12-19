@@ -40,6 +40,7 @@ class SanityTest:
         json_flip_on = {"action": "set", "properties": {"flip": True}, "resource": "cameras/" + self.cam1_cfg['sn']}
         result, data = self.utils.bs_api.shell.send_vz_cmd(json_flip_on)
         result, data = self.utils.check_4_string(str(data), '\'flip\': True')
+        print(result, data)
 
 
         # save logs to csv file is required
@@ -57,7 +58,6 @@ class SanityTest:
 
         json_flip_off = {"action": "set", "properties": {"flip": False}, "resource": "cameras/" + self.cam1_cfg['sn']}
         result, data = self.utils.bs_api.shell.send_vz_cmd(json_flip_off)
-        print(result, data)
         result, data = self.utils.check_4_string(str(data), '\'flip\': False')
 
         # save logs to csv file
@@ -91,3 +91,5 @@ if __name__ == '__main__':
     test.arloshc_t481_turn_off_rotate_image()
     test.save_logs()
     utils.logger.log_this('Main: See results.csv for list of results')
+    
+    # these are final changes made file, to merge.
