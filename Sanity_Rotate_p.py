@@ -39,6 +39,7 @@ class SanityTest:
         # setting camera resource
         json_flip_on = {"action": "set", "properties": {"flip": True}, "resource": "cameras/" + self.cam1_cfg['sn']}
         result, data = self.utils.bs_api.shell.send_vz_cmd(json_flip_on)
+        time.sleep(10)
         result, data = self.utils.check_4_string(str(data), '\'flip\': True')
         print(result, data)
 
